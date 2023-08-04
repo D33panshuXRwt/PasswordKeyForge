@@ -1,21 +1,19 @@
 import itertools
 import string
 
-print("<<----- Enter the type of password want to create ----->>")
+print("<<----- Types of Password Method ----->>")
 print("""
     1. Default (contains only charcters both UPPER-CASE and lower-case)
     2. Lower-Case only
     3. Upper-Case only 
-    
-    2. Numbers (Use for OTP/PIN)
-    3. ALL-IN (contains everthing Characters/Numbers,Special characters)
+    4. Numbers (Use for OTP/PIN)
+    5. ALL-IN (contains everthing Characters/Numbers,Special characters)
 """)
+askpswd = input("Enter your choice: ")
 
-
-
-
-
-characters = string.ascii_letters
+if askpswd == "1" or "Default" or int(askpswd) == 1:
+    characters = string.ascii_letters
+elif askpswd == "2" or "Lower-Case" or 
 
 try:
     length = int(input("Enter number of characters needed in password: "))
