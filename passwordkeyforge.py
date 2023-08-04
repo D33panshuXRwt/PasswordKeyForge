@@ -5,7 +5,7 @@ print("<<----- Enter the type of password want to create ----->>")
 print("""
     1. Default (contains only charcters both UPPER-CASE and lower-case)
     2. Lower-Case only
-    3. 
+    3. Upper-Case only 
     
     2. Numbers (Use for OTP/PIN)
     3. ALL-IN (contains everthing Characters/Numbers,Special characters)
