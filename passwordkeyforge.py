@@ -13,7 +13,13 @@ askpswd = input("Enter your choice: ")
 
 if askpswd == "1" or "Default" or int(askpswd) == 1:
     characters = string.ascii_letters
-elif askpswd == "2" or "Lower-Case" or 
+elif askpswd == "2" or "Lower-Case" or int(askpswd) ==2:
+    characters = string.ascii_lowercase
+elif askpswd == "2" or "Lower-Case" or int(askpswd) ==2:
+    characters = string.ascii_lowercase
+elif askpswd == "2" or "Lower-Case" or int(askpswd) ==2:
+    characters = string.ascii_lowercase
+
 
 try:
     length = int(input("Enter number of characters needed in password: "))
