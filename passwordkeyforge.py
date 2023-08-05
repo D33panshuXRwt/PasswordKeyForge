@@ -15,10 +15,12 @@ if askpswd == "1" or "Default" or int(askpswd) == 1:
     characters = string.ascii_letters
 elif askpswd == "2" or "Lower-Case" or int(askpswd) ==2:
     characters = string.ascii_lowercase
-elif askpswd == "2" or "Lower-Case" or int(askpswd) ==2:
-    characters = string.ascii_lowercase
-elif askpswd == "2" or "Lower-Case" or int(askpswd) ==2:
-    characters = string.ascii_lowercase
+elif askpswd == "3" or "Upper-Case" or int(askpswd) ==3:
+    characters = string.ascii_uppercase
+elif askpswd == "4" or "Numbers" or int(askpswd) ==4:
+    characters = string.digits
+elif askpswd =="5" or "ALL-IN" or int(askpswd) == 5:
+    characters = string.printable
 
 
 try:
