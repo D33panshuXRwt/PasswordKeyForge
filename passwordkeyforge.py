@@ -29,34 +29,62 @@ print("""
     5. ALL-IN (contains everthing Characters/Numbers,Special characters)
 """)
 
+# try:
 
-def ask_user():
+#     askpswd = int(input("Enter your choice: "))
 
-    askpswd = input("Enter your choice: ")
+#     if askpswd == 1:
+#             characters = string.ascii_letters
+#     elif askpswd == 2:
+#             characters = string.ascii_lowercase
+#     elif askpswd == 3:
+#             characters = string.ascii_uppercase
+#     elif askpswd == 4:
+#             characters = string.digits
+#     elif askpswd == 5:
+#             characters = string.printable
+#     else:
+#         print("Choose Valid Option")
+    
+#     i = 0
+#     length = int(input("Enter number of characters needed in password: "))
+#     for combination in itertools.combinations(characters, length):
+#         print(combination)
+#         i=i+1
+#     print(i)
 
-    if askpswd == "1" or "Default" or int(askpswd) == 1:
-        characters = string.ascii_letters
-    elif askpswd == "2" or "Lower-Case" or int(askpswd) ==2:
-        characters = string.ascii_lowercase
-    elif askpswd == "3" or "Upper-Case" or int(askpswd) ==3:
-        characters = string.ascii_uppercase
-    elif askpswd == "4" or "Numbers" or int(askpswd) ==4:
-        characters = string.digits
-    elif askpswd =="5" or "ALL-IN" or int(askpswd) == 5:
-        characters = string.printable
-    else:
-        print("Choose Valid Option")
-        ask_user()
+# except ValueError:
+#     print("<<---- Enter a numerical value to execute file ---->>")
 
-
-ask_user()
 
 try:
+    def quesusr():
+        global characters
+        askpswd = int(input("Enter your choice: "))
+
+        if askpswd == 1:
+            characters = string.ascii_letters
+        elif askpswd == 2:
+            characters = string.ascii_lowercase
+        elif askpswd == 3:
+            characters = string.ascii_uppercase
+        elif askpswd == 4:
+            characters = string.digits
+        elif askpswd == 5:
+            characters = string.printable
+        else:
+            if askpswd <= 6:
+                print("Choose Valid Option")
+                quesusr()
+
+    quesusr()
+
     i = 0
-    length = int(input("Enter number of characters needed in password: "))
-    for combination in itertools.combinations(characters, length):
-        print(combination)
-        i=i+1
+    length = int(input("Enter number of characters needed in the password: "))
+    for combination in itertools.product(characters, repeat=length):  # Use itertools.product for all combinations
+        print(''.join(combination))  # Join the characters of the combination
+        i += 1
     print(i)
+
 except ValueError:
-    print("<<---- Enter a numerical value to execute file ---->>")
+    print("<<---- Enter a numerical value to execute the file ---->>")
