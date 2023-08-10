@@ -1,7 +1,6 @@
 import itertools
 import string
 
-
 def print_clear_ascii_art():
     clear_ascii_art = """
 _____                                    _ _               __                     
@@ -13,78 +12,55 @@ _____                                    _ _               __
                                                        __/ |              __/ |     
                                                       |___/              |___/      
 """
-
     print(clear_ascii_art)
 
 # Call the function to print the ASCII art for "clear"
 print_clear_ascii_art()
 
-
-print("<<----- Types of Password Method ----->>")
+print("<<----- Types of Password Methods ----->>")
 print("""
-    1. Default (contains only charcters both UPPER-CASE and lower-case)
+    1. Default (contains both UPPER-CASE and lower-case characters)
     2. Lower-Case only
     3. Upper-Case only 
     4. Numbers (Use for OTP/PIN)
-    5. ALL-IN (contains everthing Characters/Numbers,Special characters)
+    5. ALL-IN (contains all Characters/Numbers, Special characters)
 """)
 
-# try:
+def get_character_set(choice):
+    if choice == 1:
+        return string.ascii_letters
+    elif choice == 2:
+        return string.ascii_lowercase
+    elif choice == 3:
+        return string.ascii_uppercase
+    elif choice == 4:
+        return string.digits
+    elif choice == 5:
+        return string.printable
+    else:
+        print("Choose a Valid Option")
+        return None
 
-#     askpswd = int(input("Enter your choice: "))
-
-#     if askpswd == 1:
-#             characters = string.ascii_letters
-#     elif askpswd == 2:
-#             characters = string.ascii_lowercase
-#     elif askpswd == 3:
-#             characters = string.ascii_uppercase
-#     elif askpswd == 4:
-#             characters = string.digits
-#     elif askpswd == 5:
-#             characters = string.printable
-#     else:
-#         print("Choose Valid Option")
-    
-#     i = 0
-#     length = int(input("Enter number of characters needed in password: "))
-#     for combination in itertools.combinations(characters, length):
-#         print(combination)
-#         i=i+1
-#     print(i)
-
-# except ValueError:
-#     print("<<---- Enter a numerical value to execute file ---->>")
-
+def generate_passwords(characters, length):
+    i = 0
+    for combination in itertools.product(characters, repeat=length):
+        print(''.join(combination))
+        i += 1
+    return i
 
 try:
-    def quesusr():
-        global characters
+    askpswd = int(input("Enter your choice: "))
+    
+    characters = get_character_set(askpswd)
+    
+    while characters is None:
         askpswd = int(input("Enter your choice: "))
+        characters = get_character_set(askpswd)
+        
+    length = int(input("Enter the number of characters needed in the password: "))
+    count = generate_passwords(characters, length)
+    print("Total passwords generated:", count)
 
-        if askpswd == 1:
-            characters = string.ascii_letters
-        elif askpswd == 2:
-            characters = string.ascii_lowercase
-        elif askpswd == 3:
-            characters = string.ascii_uppercase
-        elif askpswd == 4:
-            characters = string.digits
-        elif askpswd == 5:
-            characters = string.printable
-        else:
-            if askpswd <= 6:
-                print("Choose Valid Option")
-                quesusr()
-
-    quesusr()
-
-    i = 0
-    length = int(input("Enter number of characters needed in the password: "))
-    for combination in itertools.product(characters, repeat=length):  # Use itertools.product for all combinations
-        print(''.join(combination))  # Join the characters of the combination
-        i += 1
-    print(i)
-
-except ValueError:
+except:
     print("<<---- Enter a numerical value to execute the file ---->>")
+    
