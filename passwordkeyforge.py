@@ -14,7 +14,7 @@ _____                                    _ _               __
 """
     print(clear_ascii_art)
 
-# Call the function to print the ASCII art for "clear"
+
 print_clear_ascii_art()
 
 print("<<----- Types of Password Methods ----->>")
@@ -37,6 +37,8 @@ def get_character_set(choice):
         return string.digits
     elif choice == 5:
         return string.printable
+    elif choice == 6:
+        characters = input("Enter yoyr favourable characters: ")
     else:
         print("Choose a Valid Option")
         return None
