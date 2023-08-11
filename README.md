@@ -38,4 +38,4 @@ Anyone interested, can make GUI version of this tool and contribute to this proj
 
 ## License
 
-This program is completely free to use for any purpose with only one condition of giving credit to its author( which is basically me, feel to free to give credit :) ).
+This program is completely free to use for any purpose with only one condition of giving credit to its author( which is basically me, feel to free to give credit :)
