@@ -1,13 +1,13 @@
 # Password Generator
 
-A simple Python script that generates passwords based on user-selected criteria. The script allows users to choose from different types of password methods and generates passwords accordingly.
+A Python script that generates passwords based on user-selected criteria. The script allows users to choose from different types of password methods and generates passwords accordingly.
+Also User can input specific character with which password will be generated with those characters only.
 
 ## Table of Contents
 
 - [Description](#description)
 - [Usage](#usage)
 - [How to Run](#how-to-run)
-- [Supported Password Methods](#supported-password-methods)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -29,3 +29,13 @@ This password generator can be used to create passwords for various purposes, su
 
    ```bash
    python password_generator.py
+
+
+## Contributing
+
+This script been made me end-to-end and easy, free use.
+Anyone interested, can make GUI version of this tool and contribute to this project and will be published on this page.
+
+## License
+
+This program is completely free to use for any purpose with only one condition of giving credit to its author( which is basically me, feel to free to give credit :) ).
